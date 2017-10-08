@@ -10,9 +10,9 @@
 
   
   
-## 使用說明
+## 畫面範例
 
 
-#### 將 PDF 檔案直接拖曳進本程式視窗。
-![image](https://github.com/jasoncheng7115/pdf-simple-rotate/blob/master/READ_01.png?raw=true)
+#### 中文化後介面。
+![image](https://raw.githubusercontent.com/jasoncheng7115/librenms-cpatch/master/%E8%AA%AA%E6%98%8E%E5%9C%96/device.png)
 
