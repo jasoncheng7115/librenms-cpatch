@@ -52,14 +52,14 @@ if (device_permitted($vars['device']) || $permitted_by_port) {
             echo '
                 <li role="presentation" '.$select['overview'].'>
                 <a href="'.generate_device_url($device, array('tab' => 'overview')).'">
-		<i class="fa fa-lightbulb-o fa-lg icon-theme" aria-hidden="true"></i> Overview
+		<i class="fa fa-lightbulb-o fa-lg icon-theme" aria-hidden="true"></i> 概觀
                 </a>
                 </li>';
         }
 
         echo '<li role="presentation" '.$select['graphs'].'>
             <a href="'.generate_device_url($device, array('tab' => 'graphs')).'">
-            <i class="fa fa-area-chart fa-lg icon-theme" aria-hidden="true"></i> Graphs
+            <i class="fa fa-area-chart fa-lg icon-theme" aria-hidden="true"></i> 圖表
             </a>
             </li>';
 
@@ -72,7 +72,7 @@ if (device_permitted($vars['device']) || $permitted_by_port) {
         if ($health) {
             echo '<li role="presentation" '.$select['health'].'>
                 <a href="'.generate_device_url($device, array('tab' => 'health')).'">
-                <i class="fa fa-heartbeat fa-lg icon-theme" aria-hidden="true"></i> Health
+                <i class="fa fa-heartbeat fa-lg icon-theme" aria-hidden="true"></i> 健康狀況
                 </a>
                 </li>';
         }
@@ -80,7 +80,7 @@ if (device_permitted($vars['device']) || $permitted_by_port) {
         if (@dbFetchCell("SELECT COUNT(app_id) FROM applications WHERE device_id = '".$device['device_id']."'") > '0') {
             echo '<li role="presentation" '.$select['apps'].'>
                 <a href="'.generate_device_url($device, array('tab' => 'apps')).'">
-                <i class="fa fa-cubes fa-lg icon-theme" aria-hidden="true"></i> Apps
+                <i class="fa fa-cubes fa-lg icon-theme" aria-hidden="true"></i> 應用程式
                 </a>
                 </li>';
         }
@@ -88,7 +88,7 @@ if (device_permitted($vars['device']) || $permitted_by_port) {
         if (@dbFetchCell("SELECT 1 FROM processes WHERE device_id = '".$device['device_id']."'") > '0') {
             echo '<li role="presentation" '.$select['processes'].'>
                 <a href="'.generate_device_url($device, array('tab' => 'processes')).'">
-                <i class="fa fa-microchip fa-lg icon-theme" aria-hidden="true"></i> Processes
+                <i class="fa fa-microchip fa-lg icon-theme" aria-hidden="true"></i> 應用程式
                 </a>
                 </li>';
         }
@@ -112,7 +112,7 @@ if (device_permitted($vars['device']) || $permitted_by_port) {
         if (@dbFetchCell("SELECT COUNT(port_id) FROM ports WHERE device_id = '".$device['device_id']."'") > '0') {
             echo '<li role="presentation" '.$select['ports'].$select['port'].'">
                 <a href="'.generate_device_url($device, array('tab' => 'ports')).'">
-                <i class="fa fa-link fa-lg icon-theme" aria-hidden="true"></i> Ports
+                <i class="fa fa-link fa-lg icon-theme" aria-hidden="true"></i> 連接埠
                 </a>
                 </li>';
         }
@@ -128,7 +128,7 @@ if (device_permitted($vars['device']) || $permitted_by_port) {
         if (@dbFetchCell('SELECT COUNT(*) FROM `wireless_sensors` WHERE `device_id`=?', array($device['device_id'])) > '0') {
             echo '<li role="presentation" '.$select['wireless'].'>
                 <a href="'.generate_device_url($device, array('tab' => 'wireless')).'">
-                <i class="fa fa-wifi fa-lg icon-theme"  aria-hidden="true"></i> Wireless
+                <i class="fa fa-wifi fa-lg icon-theme"  aria-hidden="true"></i> 無線網路
                 </a>
                 </li>';
         }
@@ -162,7 +162,7 @@ if (device_permitted($vars['device']) || $permitted_by_port) {
         if (@dbFetchCell("SELECT COUNT(id) FROM vminfo WHERE device_id = '".$device['device_id']."'") > '0') {
             echo '<li role="presentation" '.$select['vm'].'>
                 <a href="'.generate_device_url($device, array('tab' => 'vm')).'">
-                <i class="fa fa-cog fa-lg icon-theme"  aria-hidden="true"></i> Virtual Machines
+                <i class="fa fa-cog fa-lg icon-theme"  aria-hidden="true"></i> 虛擬機器
                 </a>
                 </li>';
         }
@@ -179,7 +179,7 @@ if (device_permitted($vars['device']) || $permitted_by_port) {
             if (@dbFetchCell("SELECT COUNT(id) FROM tnmsneinfo WHERE device_id = '".$device['device_id']."'") > '0') {
                 echo '<li class="'.$select['tnmsne'].'">
                     <a href="'.generate_device_url($device, array('tab' => 'tnmsne')).'">
-                    <i class="fa fa-link fa-lg icon-theme"  aria-hidden="true"></i> Hardware
+                    <i class="fa fa-link fa-lg icon-theme"  aria-hidden="true"></i> 硬體
                     </a>
                     </li>';
             }
@@ -215,7 +215,7 @@ if (device_permitted($vars['device']) || $permitted_by_port) {
         if (is_array($loadbalancer_tabs)) {
             echo '<li role="presentation" '.$select['loadbalancer'].'>
                 <a href="'.generate_device_url($device, array('tab' => 'loadbalancer')).'">
-                <i class="fa fa-balance-scale fa-lg icon-theme"  aria-hidden="true"></i> Load Balancer
+                <i class="fa fa-balance-scale fa-lg icon-theme"  aria-hidden="true"></i> 負載平衡
                 </a>
                 </li>';
         }
@@ -259,7 +259,7 @@ if (device_permitted($vars['device']) || $permitted_by_port) {
         if (is_array($routing_tabs)) {
             echo '<li role="presentation" '.$select['routing'].'>
                 <a href="'.generate_device_url($device, array('tab' => 'routing')).'">
-                <i class="fa fa-random fa-lg icon-theme"  aria-hidden="true"></i> Routing
+                <i class="fa fa-random fa-lg icon-theme"  aria-hidden="true"></i> 路由
                 </a>
                 </li>';
         }
@@ -274,7 +274,7 @@ if (device_permitted($vars['device']) || $permitted_by_port) {
 
         echo '<li role="presentation" '.$select['map'].'>
                 <a href="'.generate_device_url($device, array('tab' => 'map')).'">
-                  <i class="fa fa-sitemap fa-lg icon-theme"  aria-hidden="true"></i> Map
+                  <i class="fa fa-sitemap fa-lg icon-theme"  aria-hidden="true"></i> 地圖
                 </a>
               </li>';
 
@@ -289,7 +289,7 @@ if (device_permitted($vars['device']) || $permitted_by_port) {
         if (@dbFetchCell("SELECT COUNT(*) FROM `packages` WHERE device_id = '".$device['device_id']."'") > '0') {
             echo '<li role="presentation" '.$select['packages'].'>
                 <a href="'.generate_device_url($device, array('tab' => 'packages')).'">
-                <i class="fa fa-folder fa-lg icon-theme"  aria-hidden="true"></i> Pkgs
+                <i class="fa fa-folder fa-lg icon-theme"  aria-hidden="true"></i> 套件
                 </a>
                 </li>';
         }
@@ -313,7 +313,7 @@ if (device_permitted($vars['device']) || $permitted_by_port) {
         if ($config['show_services']) {
             echo '<li role="presentation" '.$select['services'].'>
                 <a href="'.generate_device_url($device, array('tab' => 'services')).'">
-                <i class="fa fa-cogs fa-lg icon-theme"  aria-hidden="true"></i> Services
+                <i class="fa fa-cogs fa-lg icon-theme"  aria-hidden="true"></i> 服務
                 </a>
                 </li>';
         }
@@ -321,26 +321,26 @@ if (device_permitted($vars['device']) || $permitted_by_port) {
         if (@dbFetchCell("SELECT COUNT(toner_id) FROM toner WHERE device_id = '".$device['device_id']."'") > '0') {
             echo '<li role="presentation" '.$select['toner'].'>
                 <a href="'.generate_device_url($device, array('tab' => 'toner')).'">
-                <i class="fa fa-print fa-lg icon-theme"  aria-hidden="true"></i> Toner
+                <i class="fa fa-print fa-lg icon-theme"  aria-hidden="true"></i> 碳粉
                 </a>
                 </li>';
         }
 
         echo '<li role="presentation" '.$select['logs'].'>
             <a href="'.generate_device_url($device, array('tab' => 'logs')).'">
-            <i class="fa fa-sticky-note fa-lg icon-theme"  aria-hidden="true"></i> Logs
+            <i class="fa fa-sticky-note fa-lg icon-theme"  aria-hidden="true"></i> 記錄
             </a>
             </li>';
 
         echo '<li role="presentation" '.$select['alerts'].'>
             <a href="'.generate_device_url($device, array('tab' => 'alerts')).'">
-            <i class="fa fa-exclamation-circle fa-lg icon-theme"  aria-hidden="true"></i> Alerts
+            <i class="fa fa-exclamation-circle fa-lg icon-theme"  aria-hidden="true"></i> 警報
             </a>
             </li>';
 
         echo '<li role="presentation" '.$select['alert-stats'].'>
             <a href="'.generate_device_url($device, array('tab' => 'alert-stats')).'">
-            <i class="fa fa-bar-chart fa-lg icon-theme"  aria-hidden="true"></i> Alert Stats
+            <i class="fa fa-bar-chart fa-lg icon-theme"  aria-hidden="true"></i> 警報狀態
             </a>
             </li>';
 
@@ -376,7 +376,7 @@ if (device_permitted($vars['device']) || $permitted_by_port) {
             if (dbFetchCell("SELECT COUNT(device_id) FROM devices_attribs WHERE device_id = ? AND attrib_type = 'override_Oxidized_disable' AND attrib_value='true'", array($device['device_id'])) == '0') {
                 echo '<li class="'.$select['showconfig'].'">
                     <a href="'.generate_device_url($device, array('tab' => 'showconfig')).'">
-                    <i class="fa fa-align-justify fa-lg icon-theme"  aria-hidden="true"></i> Config
+                    <i class="fa fa-align-justify fa-lg icon-theme"  aria-hidden="true"></i> 組態
                     </a>
                     </li>';
             }
@@ -421,14 +421,14 @@ if (device_permitted($vars['device']) || $permitted_by_port) {
         if (can_ping_device($attribs) === true) {
             echo '<li role="presentation" '.$select['performance'].'>
                 <a href="'.generate_device_url($device, array('tab' => 'performance')).'">
-                <i class="fa fa-line-chart fa-lg icon-theme"  aria-hidden="true"></i> Performance
+                <i class="fa fa-line-chart fa-lg icon-theme"  aria-hidden="true"></i> 效能
                 </a>
                 </li>';
         }
 
         echo '<li role="presentation" '.$select['notes'].'>
             <a href="'.generate_device_url($device, array('tab' => 'notes')).'">
-            <i class="fa fa-file-text-o fa-lg icon-theme"  aria-hidden="true"></i> Notes
+            <i class="fa fa-file-text-o fa-lg icon-theme"  aria-hidden="true"></i> 備註
             </a>
             </li>';
 
@@ -451,7 +451,7 @@ if (device_permitted($vars['device']) || $permitted_by_port) {
         if (is_admin()) {
             echo '<li>
                 <a href="'.generate_device_url($device, array('tab' => 'edit')).'">
-                <i class="fa fa-pencil fa-lg icon-theme"  aria-hidden="true"></i> Edit </a>
+                <i class="fa fa-pencil fa-lg icon-theme"  aria-hidden="true"></i> 編輯 </a>
                 </li>';
 
             echo '<li><a href="'.generate_device_url($device, array('tab' => 'capture')).'">

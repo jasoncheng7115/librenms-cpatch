@@ -7,7 +7,7 @@ $pagetitle[] = 'Alert Log';
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-md-2">
-                            <strong>Alert Log entries</strong>
+                            <strong>警報記錄</strong>
                         </div>
                         <div class="col-md-2 col-md-offset-8">
                             <div class="pull-right pdf-export"></div>
@@ -21,11 +21,11 @@ $pagetitle[] = 'Alert Log';
 <table id="alertlog" class="table table-hover table-condensed table-striped">
     <thead>
         <tr>
-            <th data-column-id="time_logged" data-order="desc">Time logged</th>
+            <th data-column-id="time_logged" data-order="desc">記錄時間</th>
             <th data-column-id="details" data-sortable="false">&nbsp;</th>
-            <th data-column-id="hostname">Device</th>
-            <th data-column-id="alert">Alert</th>
-            <th data-column-id="status" data-sortable="false">Status</th>
+            <th data-column-id="hostname">裝置</th>
+            <th data-column-id="alert">警報</th>
+            <th data-column-id="status" data-sortable="false">狀態</th>
         </tr>
     </thead>
 </table>
@@ -43,7 +43,7 @@ var grid = $("#alertlog").bootgrid({
                 <form method="post" action="" class="form-inline" role="form" id="result_form"> \
                 <div class="form-group"> \
                 <label> \
-                <strong>Device&nbsp;</strong> \
+                <strong>裝置&nbsp;</strong> \
                 </label> \
                 <select name="device_id" id="device_id" class="form-control input-sm" style="min-width: 175px;"> \
                 <option value="">All Devices</option> \
@@ -51,7 +51,7 @@ var grid = $("#alertlog").bootgrid({
                </div> \
                <div class="form-group"> \
                <label> \
-               <strong>&nbsp;State&nbsp;</strong> \
+               <strong>&nbsp;狀態&nbsp;</strong> \
                </label> \
                <select name="state" id="state" class="form-control input-sm"> \
                <option value="-1"></option> \

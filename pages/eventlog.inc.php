@@ -9,7 +9,7 @@ if ($vars['action'] == 'expunge' && $_SESSION['userlevel'] >= '10') {
     print_message('Event log truncated');
 }
 
-$pagetitle[] = 'Eventlog';
+$pagetitle[] = '事件記錄';
 
 print_optionbar_start();
 
@@ -18,10 +18,10 @@ print_optionbar_start();
 <form method="post" action="" class="form-inline" role="form" id="result_form">
     <div class="form-group">
       <label>
-        <strong>Device</strong>
+        <strong>裝置</strong>
       </label>
       <select name="device" id="device" class="form-control input-sm">
-        <option value="">All Devices</option>
+        <option value="">所有裝置</option>
         <?php
         foreach (get_all_devices() as $data) {
             if (device_permitted($data['device_id'])) {
@@ -38,10 +38,10 @@ print_optionbar_start();
     </div>
     <div class="form-group">
         <label>
-            <strong>Type: </strong>
+            <strong>類型: </strong>
         </label>
         <select name="eventtype" id="eventtype" class="form-control input-sm">
-            <option value="">All types</option>
+            <option value="">所有類型</option>
 <?php
 
 foreach (dbFetchColumn("SELECT `type` FROM `eventlog` GROUP BY `type`") as $type) {

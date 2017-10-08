@@ -36,7 +36,7 @@ if ($_POST['hostname']) {
             }
 
             $snmpver = mres($_POST['snmpver']);
-            print_message("Adding host $hostname communit".(count($config['snmp']['community']) == 1 ? 'y' : 'ies').' '.implode(', ', $config['snmp']['community'])." port $port using $transport");
+            print_message("Adding host $hostname communit".(count($config['snmp']['community']) == 1 ? 'y' : 'ies').' '.implode(', ', $config['snmp']['community'])." 埠號 $port 使用 $transport");
         } elseif ($_POST['snmpver'] === 'v3') {
             $v3 = array(
                    'authlevel'  => mres($_POST['authlevel']),
@@ -50,9 +50,9 @@ if ($_POST['hostname']) {
             array_push($config['snmp']['v3'], $v3);
 
             $snmpver = 'v3';
-            print_message("Adding SNMPv3 host $hostname port $port");
+            print_message("正在新增 SNMPv3 主機 $hostname 埠號 $port");
         } else {
-            print_error('Unsupported SNMP Version. There was a dropdown menu, how did you reach this error ?');
+            print_error('不支援的 SNMP 版本. There was a dropdown menu, how did you reach this error ?');
         }//end if
         $poller_group = $_POST['poller_group'];
         $force_add    = ($_POST['force_add'] == 'on');
@@ -61,7 +61,7 @@ if ($_POST['hostname']) {
         try {
             $device_id = addHost($hostname, $snmpver, $port, $transport, $poller_group, $force_add, $port_assoc_mode);
             $link = generate_device_url(array('device_id' => $device_id));
-            print_message("Device added <a href='$link'>$hostname ($device_id)</a>");
+            print_message("裝置已新增 <a href='$link'>$hostname ($device_id)</a>");
         } catch (HostUnreachableException $e) {
             print_error($e->getMessage());
             foreach ($e->getReasons() as $reason) {
@@ -71,7 +71,7 @@ if ($_POST['hostname']) {
             print_error($e->getMessage());
         }
     } else {
-        print_error("You don't have the necessary privileges to add hosts.");
+        print_error("你沒有足夠的權限可以新增裝置。");
     }//end if
     echo '    </div>
             <div class="col-sm-3">
@@ -79,7 +79,7 @@ if ($_POST['hostname']) {
         </div>';
 }//end if
 
-$pagetitle[] = 'Add host';
+$pagetitle[] = 新增主機;
 
 ?>
 
@@ -88,17 +88,17 @@ $pagetitle[] = 'Add host';
   </div>
   <div class="col-sm-6">
 <form name="form1" method="post" action="" class="form-horizontal" role="form">
-  <div><h2>Add Device</h2></div>
-  <div class="alert alert-info">Devices will be checked for Ping and SNMP reachability before being probed. Only devices with recognised OSes will be added.</div>
+  <div><h2>新增裝置</h2></div>
+  <div class="alert alert-info">加入裝置之前，系統將會先確認裝置的 Ping 與 SNMP 是否可以連線。另外，只有會被系統識別的裝置才能加入監視。</div>
   <div class="well well-lg">
     <div class="form-group">
-      <label for="hostname" class="col-sm-3 control-label">Hostname</label>
+      <label for="hostname" class="col-sm-3 control-label">主機名稱</label>
       <div class="col-sm-9">
-        <input type="text" id="hostname" name="hostname" class="form-control input-sm" placeholder="Hostname">
+        <input type="text" id="hostname" name="hostname" class="form-control input-sm" placeholder="主機名稱或 IP 位址">
       </div>
     </div>
     <div class="form-group">
-      <label for="snmpver" class="col-sm-3 control-label">SNMP Version</label>
+      <label for="snmpver" class="col-sm-3 control-label">SNMP 版本</label>
       <div class="col-sm-3">
         <select name="snmpver" id="snmpver" class="form-control input-sm" onChange="changeForm();">
           <option value="v1">v1</option>
@@ -107,7 +107,7 @@ $pagetitle[] = 'Add host';
         </select>
       </div>
       <div class="col-sm-3">
-        <input type="text" name="port" placeholder="port" class="form-control input-sm">
+        <input type="text" name="port" placeholder="埠號" class="form-control input-sm">
       </div>
       <div class="col-sm-3">
         <select name="transport" id="transport" class="form-control input-sm">
@@ -125,7 +125,7 @@ foreach ($config['snmp']['transports'] as $transport) {
       </div>
     </div>
     <div class="form-group">
-      <label for="port_association_mode" class="col-sm-3 control-label">Port Association Mode</label>
+      <label for="port_association_mode" class="col-sm-3 control-label">Port 協議模式</label>
       <div class="col-sm-3">
         <select name="port_assoc_mode" id="port_assoc_mode" class="form-control input-sm">
 <?php
@@ -146,20 +146,20 @@ foreach (get_port_assoc_modes() as $mode) {
     <div id="snmpv1_2">
       <div class="form-group">
         <div class="col-sm-12 alert alert-info">
-          <label class="control-label text-left input-sm">SNMPv1/2c Configuration</label>
+          <label class="control-label text-left input-sm">SNMPv1/2c 組態設定</label>
         </div>
       </div>
       <div class="form-group">
         <label for="community" class="col-sm-3 control-label">Community</label>
         <div class="col-sm-9">
-          <input type="text" name="community" id="community" placeholder="Community" class="form-control input-sm">
+          <input type="text" name="community" id="community" placeholder="請輸入 Community 名稱" class="form-control input-sm">
         </div>
       </div>
     </div>
     <div id="snmpv3">
       <div class="form-group">
         <div class="col-sm-12 alert alert-info">
-          <label class="control-label text-left input-sm">SNMPv3 Configuration</label>
+          <label class="control-label text-left input-sm">SNMPv3 組態設定</label>
         </div>
       </div>
       <div class="form-group">
@@ -173,19 +173,19 @@ foreach (get_port_assoc_modes() as $mode) {
         </div>
       </div>
       <div class="form-group">
-        <label for="authname" class="col-sm-3 control-label">Auth User Name</label>
+        <label for="authname" class="col-sm-3 control-label">認證帳號</label>
         <div class="col-sm-9">
           <input type="text" name="authname" id="authname" class="form-control input-sm">
         </div>
       </div>
       <div class="form-group">
-        <label for="authpass" class="col-sm-3 control-label">Auth Password</label>
+        <label for="authpass" class="col-sm-3 control-label">認證密碼</label>
         <div class="col-sm-9">
           <input type="text" name="authpass" id="authpass" placeholder="AuthPass" class="form-control input-sm">
         </div>
       </div>
       <div class="form-group">
-        <label for="authalgo" class="col-sm-3 control-label">Auth Algorithm</label>
+        <label for="authalgo" class="col-sm-3 control-label">認證演算法</label>
         <div class="col-sm-9">
           <select name="authalgo" id="authalgo" class="form-control input-sm">
             <option value="MD5" selected>MD5</option>
@@ -194,13 +194,13 @@ foreach (get_port_assoc_modes() as $mode) {
         </div>
       </div>
       <div class="form-group">
-        <label for="cryptopass" class="col-sm-3 control-label">Crypto Password</label>
+        <label for="cryptopass" class="col-sm-3 control-label">加密用密碼</label>
         <div class="col-sm-9">
           <input type="text" name="cryptopass" id="cryptopass" placeholder="Crypto Password" class="form-control input-sm">
         </div>
       </div>
       <div class="form-group">
-        <label for="cryptoalgo" class="col-sm-3 control-label">Crypto Algorithm</label>
+        <label for="cryptoalgo" class="col-sm-3 control-label">加密演算法</label>
         <div class="col-sm-9">
           <select name="cryptoalgo" id="cryptoalgo" class="form-control input-sm">
             <option value="AES" selected>AES</option>
@@ -213,10 +213,10 @@ foreach (get_port_assoc_modes() as $mode) {
 if ($config['distributed_poller'] === true) {
     echo '
       <div class="form-group">
-          <label for="poller_group" class="col-sm-3 control-label">Poller Group</label>
+          <label for="poller_group" class="col-sm-3 control-label">Poller 群組</label>
           <div class="col-sm-9">
               <select name="poller_group" id="poller_group" class="form-control input-sm">
-                  <option value="0"> Default poller group</option>
+                  <option value="0"> 預設 poller 群組</option>
     ';
 
     foreach (dbFetchRows('SELECT `id`,`group_name` FROM `poller_groups`') as $group) {
@@ -234,7 +234,7 @@ if ($config['distributed_poller'] === true) {
           <div class="col-sm-offset-3 col-sm-9">
               <div class="checkbox">
                   <label>
-                      <input type="checkbox" name="force_add" id="force_add"> Force add - No ICMP or SNMP checks performed
+                      <input type="checkbox" name="force_add" id="force_add"> 強制增加 - 不做 ICMP 或 SNMP 狀態確認
                   </label>
               </div>
           </div>

@@ -26,7 +26,7 @@ print_optionbar_start();
                         if (!is_numeric($vars['device'])) {
                         ?>
                         <select name="device" id="device" class="form-control input-sm">
-                            <option value="">All Devices</option>
+                            <option value="">所有裝置</option>
                             <?php
                             foreach (get_all_devices() as $data) {
                                 if (device_permitted($data['device_id'])) {
@@ -47,7 +47,7 @@ print_optionbar_start();
                     </div>
                     <div class="form-group">
                         <select name="program" id="program" class="form-control input-sm">
-                            <option value="">All Programs</option>
+                            <option value="">所有程式</option>
                                 <?php
                                 $sqlstatement = 'SELECT DISTINCT `program` FROM `syslog`';
                                 if (is_numeric($vars['device'])) {
@@ -68,7 +68,7 @@ print_optionbar_start();
                     </div>
                     <div class="form-group">
                         <select name="priority" id="priority" class="form-control input-sm">
-                            <option value="">All Priorities</option>
+                            <option value="">所有等級</option>
                                 <?php
                                 $sqlstatement = 'SELECT DISTINCT `priority` FROM `syslog`';
                                 if (is_numeric($vars['device'])) {
@@ -88,10 +88,10 @@ print_optionbar_start();
                         </select>
                     </div>
                     <div class="form-group">
-                        <input name="from" type="text" class="form-control input-sm" id="dtpickerfrom" maxlength="16" value="<?php echo $vars['from']; ?>" placeholder="From" data-date-format="YYYY-MM-DD HH:mm">
+                        <input name="from" type="text" class="form-control input-sm" id="dtpickerfrom" maxlength="16" value="<?php echo $vars['from']; ?>" placeholder="從" data-date-format="YYYY-MM-DD HH:mm">
                     </div>
                     <div class="form-group">
-                        <input name="to" type="text" class="form-control input-sm" id="dtpickerto" maxlength="16" value="<?php echo $vars['to']; ?>" placeholder="To" data-date-format="YYYY-MM-DD HH:mm">
+                        <input name="to" type="text" class="form-control input-sm" id="dtpickerto" maxlength="16" value="<?php echo $vars['to']; ?>" placeholder="到" data-date-format="YYYY-MM-DD HH:mm">
                     </div>
                     <button type="submit" class="btn btn-default input-sm">篩選</button>
                 </form>

@@ -333,21 +333,21 @@ if ($no_refresh !== true && $config['page_refresh'] != 0) {
     echo('<script type="text/javascript">
         $(document).ready(function() {
 
-           $("#countdown_timer_status").html("<i class=\"fa fa-pause fa-fw fa-lg\"></i> Pause");
+           $("#countdown_timer_status").html("<i class=\"fa fa-pause fa-fw fa-lg\"></i> 暫停");
            var Countdown = {
                sec: '. $config['page_refresh'] .',
 
                Start: function() {
                    var cur = this;
                    this.interval = setInterval(function() {
-                       $("#countdown_timer_status").html("<i class=\"fa fa-pause fa-fw fa-lg\"></i> Pause");
+                       $("#countdown_timer_status").html("<i class=\"fa fa-pause fa-fw fa-lg\"></i> 暫停");
                        cur.sec -= 1;
                        display_time = cur.sec;
                        if (display_time == 0) {
                            location.reload();
                        }
                        if (display_time % 1 === 0 && display_time <= 300) {
-                           $("#countdown_timer").html("<i class=\"fa fa-clock-o fa-fw fa-lg\"></i> Refresh in " + display_time);
+                           $("#countdown_timer").html("<i class=\"fa fa-clock-o fa-fw fa-lg\"></i> " + display_time + " 秒後重新整理");
                        }
                    }, 1000);
                },

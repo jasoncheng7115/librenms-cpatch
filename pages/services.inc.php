@@ -1,6 +1,6 @@
 ﻿<?php
 
-$pagetitle[] = 'Services';
+$pagetitle[] = '服務';
 
 ?>
 <div class="container-fluid">
@@ -12,19 +12,19 @@ print_optionbar_start();
 require_once 'includes/modal/new_service.inc.php';
 require_once 'includes/modal/delete_service.inc.php';
 
-echo "<span style='font-weight: bold;'>Services</span> &#187; ";
+echo "<span style='font-weight: bold;'>服務</span> &#187; ";
 
 $menu_options = array(
-    'basic'   => 'Basic',
+    'basic'   => '基本',
 );
 if (!$vars['view']) {
     $vars['view'] = 'basic';
 }
 
 $status_options = array(
-    'all'       => 'All',
-    'ok'        => 'Ok',
-    'warning'   => 'Warning',
+    'all'       => '全部',
+    'ok'        => '正常',
+    'warning'   => '警告',
     'critical'  => '嚴重',
 );
 if (!$vars['state']) {
