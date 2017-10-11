@@ -111,7 +111,7 @@ if (isset($config['graylog']['server']) && isset($config['graylog']['port'])) {
 }
 
 ?>
-            <li><a href="<?php echo(generate_url(array('page'=>'inventory'))); ?>"><i class="fa fa-cube fa-fw fa-lg" aria-hidden="true"></i> 網路設備清單</a></li>
+            <li><a href="<?php echo(generate_url(array('page'=>'inventory'))); ?>"><i class="fa fa-cube fa-fw fa-lg" aria-hidden="true"></i> 設備清單</a></li>
 <?php
 if (dbFetchCell("SELECT 1 from `packages` LIMIT 1")) {
 ?>

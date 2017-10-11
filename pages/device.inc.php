@@ -298,13 +298,13 @@ if (device_permitted($vars['device']) || $permitted_by_port) {
             if (@dbFetchCell("SELECT * FROM `entPhysical` WHERE device_id = '" . $device['device_id'] . "'") > '0') {
                 echo '<li role="presentation" ' . $select['entphysical'] . '>
                     <a href="' . generate_device_url($device, array('tab' => 'entphysical')) . '">
-                    <i class="fa fa-cube fa-lg icon-theme"  aria-hidden="true"></i> Inventory
+                    <i class="fa fa-cube fa-lg icon-theme"  aria-hidden="true"></i> 設備
                     </a>
                     </li>';
             } elseif (@dbFetchCell("SELECT * FROM `hrDevice` WHERE device_id = '" . $device['device_id'] . "'") > '0') {
                 echo '<li role="presentation" ' . $select['hrdevice'] . '>
                     <a href="' . generate_device_url($device, array('tab' => 'hrdevice')) . '">
-                    <i class="fa fa-cube fa-lg icon-theme"  aria-hidden="true"></i> Inventory
+                    <i class="fa fa-cube fa-lg icon-theme"  aria-hidden="true"></i> 設備
                     </a>
                     </li>';
             }

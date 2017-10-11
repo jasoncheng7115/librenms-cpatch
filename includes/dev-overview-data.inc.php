@@ -125,7 +125,7 @@ if (is_array($loc)) {
 
 if ($uptime) {
     echo "<tr>
-        <td>$uptime_text</td>
+        <td>運作時間</td>
         <td>".$uptime."</td>
       </tr>";
 }
