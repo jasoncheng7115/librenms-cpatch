@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 $common_output[] = '
 <div class="table-responsive">

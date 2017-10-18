@@ -1,4 +1,4 @@
-﻿<div class="table-responsive">
+<div class="table-responsive">
     <table id="sensors" class="table table-hover table-condensed storage">
         <thead>
             <tr>

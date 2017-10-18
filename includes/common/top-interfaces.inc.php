@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /* Copyright (C) 2015 Sergiusz Paprzycki <serek@walcz.net>
  * 
  * This widget is based on legacy frontpage module created by Paul Gear.

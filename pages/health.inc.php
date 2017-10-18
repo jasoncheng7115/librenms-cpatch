@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 $datas = array('mempool','processor','storage');
 if ($used_sensors['temperature']) {

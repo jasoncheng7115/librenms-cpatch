@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 /**
  * LibreNMS
@@ -1465,10 +1465,10 @@ function get_oxidized_nodes_list()
     foreach ($data as $object) {
         $device = device_by_name($object['name']);
         $fa_color = $object['status'] == 'success' ? 'success' : 'danger';
-// 2017/09/05 jason fix
-        $fixtztime = date(str_replace("UTC","",$object['time']));      
-        $fixtztime = date('Y-m-d H:i:s',strtotime('+8 hour',strtotime($fixtztime)));
-// 2017/09/05 jason fix
+ // 2017/09/05 jason fix
+ $fixtztime = date(str_replace("UTC","",$object['time']));
+ $fixtztime = date('Y-m-d H:i:s',strtotime('+8 hour',strtotime($fixtztime)));
+ // 2017/09/05 jason fix
 
         echo "
         <tr>

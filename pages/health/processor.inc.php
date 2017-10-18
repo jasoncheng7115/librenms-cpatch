@@ -1,4 +1,4 @@
-﻿<div class="table-responsive">
+<div class="table-responsive">
     <table id="processor" class="table table-hover table-condensed processor">
         <thead>
             <tr>

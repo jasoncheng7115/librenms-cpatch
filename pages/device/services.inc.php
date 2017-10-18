@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 $pagetitle[] = '服務';
 

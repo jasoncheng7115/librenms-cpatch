@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require_once 'includes/object-cache.inc.php';
 
 $temp_output = '

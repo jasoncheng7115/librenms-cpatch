@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 if (!is_numeric($vars['device'])) {
     $vars['device'] = getidbyname($vars['device']);
@@ -272,9 +272,9 @@ if (device_permitted($vars['device']) || $permitted_by_port) {
                 </li>';
         }
 
-        echo '<li role="presentation" '.$select['map'].'>
-                <a href="'.generate_device_url($device, array('tab' => 'map')).'">
-                  <i class="fa fa-sitemap fa-lg icon-theme"  aria-hidden="true"></i> 地圖
+        echo '<li role="presentation" '.$select['neighbours'].'>
+                <a href="'.generate_device_url($device, array('tab' => 'neighbours')).'">
+                  <i class="fa fa-sitemap fa-lg icon-theme"  aria-hidden="true"></i> Neighbours
                 </a>
               </li>';
 

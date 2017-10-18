@@ -1,4 +1,4 @@
-﻿<div class="table-responsive">
+<div class="table-responsive">
     <table id="mempool" class="table table-hover table-condensed mempool">
         <thead>
             <tr>

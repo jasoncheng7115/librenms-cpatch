@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $param = array();
 
 $pagetitle[] = 'Alert Log';

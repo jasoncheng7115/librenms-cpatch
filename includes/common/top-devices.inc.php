@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /* Copyright (C) 2015 Sergiusz Paprzycki <serek@walcz.net>
  * Copyright (C) 2016 Cercel Valentin <crc@nuamchefazi.ro>
  *

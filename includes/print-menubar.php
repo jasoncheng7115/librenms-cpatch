@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // FIXME - this could do with some performance improvements, i think. possible rearranging some tables and setting flags at poller time (nothing changes outside of then anyways)
 
 use LibreNMS\Device\WirelessSensor;
