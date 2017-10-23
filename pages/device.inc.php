@@ -88,7 +88,7 @@ if (device_permitted($vars['device']) || $permitted_by_port) {
         if (@dbFetchCell("SELECT 1 FROM processes WHERE device_id = '".$device['device_id']."'") > '0') {
             echo '<li role="presentation" '.$select['processes'].'>
                 <a href="'.generate_device_url($device, array('tab' => 'processes')).'">
-                <i class="fa fa-microchip fa-lg icon-theme" aria-hidden="true"></i> 應用程式
+                <i class="fa fa-microchip fa-lg icon-theme" aria-hidden="true"></i> 程序
                 </a>
                 </li>';
         }
@@ -272,9 +272,9 @@ if (device_permitted($vars['device']) || $permitted_by_port) {
                 </li>';
         }
 
-        echo '<li role="presentation" '.$select['neighbours'].'>
-                <a href="'.generate_device_url($device, array('tab' => 'neighbours')).'">
-                  <i class="fa fa-sitemap fa-lg icon-theme"  aria-hidden="true"></i> Neighbours
+        echo '<li role="presentation" '.$select['map'].'>
+                <a href="'.generate_device_url($device, array('tab' => 'map')).'">
+                  <i class="fa fa-sitemap fa-lg icon-theme"  aria-hidden="true"></i> 地圖
                 </a>
               </li>';
 

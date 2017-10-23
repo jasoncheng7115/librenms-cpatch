@@ -296,7 +296,7 @@ if ($_SESSION['userlevel'] >= '5') {
         $ifbreak = 1;
     }
     if ($config['int_transit']) {
-        echo('            <li><a href="iftype/type=transit/"><i class="fa fa-truck fa-fw fa-lg" aria-hidden="true"></i> 轉接訊務</a></li>');
+        echo('            <li><a href="iftype/type=transit/"><i class="fa fa-truck fa-fw fa-lg" aria-hidden="true"></i> 轉換訊務</a></li>');
         $ifbreak = 1;
     }
     if ($config['int_peering']) {
@@ -304,7 +304,7 @@ if ($_SESSION['userlevel'] >= '5') {
         $ifbreak = 1;
     }
     if ($config['int_peering'] && $config['int_transit']) {
-        echo('            <li><a href="iftype/type=peering,transit/"><i class="fa fa-rocket fa-fw fa-lg" aria-hidden="true"></i> 網路互連 + 轉接訊務</a></li>');
+        echo('            <li><a href="iftype/type=peering,transit/"><i class="fa fa-rocket fa-fw fa-lg" aria-hidden="true"></i> 網路互連 + 轉換訊務</a></li>');
         $ifbreak = 1;
     }
     if ($config['int_core']) {
