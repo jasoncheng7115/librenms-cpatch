@@ -49,6 +49,9 @@ if ($used_sensors['pressure']) {
 if ($used_sensors['cooling']) {
     $datas[] = 'cooling';
 }
+if ($used_sensors['toner']) {
+    $datas[] = 'toner';
+}
 
 // FIXME generalize -> static-config ?
 $type_text['overview'] = "概觀";
@@ -73,6 +76,7 @@ $type_text['signal'] = "訊號";
 $type_text['snr'] = "SNR";
 $type_text['pressure'] = "Pressure";
 $type_text['cooling'] = "Cooling";
+$type_text['toner'] = 'Toner';
 
 if (!$vars['metric']) {
     $vars['metric'] = "processor";
