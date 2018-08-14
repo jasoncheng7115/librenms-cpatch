@@ -1,4 +1,4 @@
-# LibreNMS-CPatch / LibreNMS 正體中文化更新檔
+# LibreNMS-CPatch / LibreNMS 繁體中文化更新檔
 
 
 ## 使用說明
