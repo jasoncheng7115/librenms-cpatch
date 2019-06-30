@@ -6,7 +6,7 @@
 將主要常用介面中文化，需要者請直接下載後覆蓋即可，這裡只會存放有修改過的檔案，不用全部蓋過。
 
 支援至 1.33  
-(補充說明：已開始在官方架構進行繁體中文化，已經可以更新，相關資訊可參考 https://github.com/librenms/librenms/tree/master/resources/lang)
+(2019/06/30 補充說明：已開始在官方架構進行繁體中文化，已經可以更新，相關資訊可參考 https://github.com/librenms/librenms/tree/master/resources/lang)
 
 
 
